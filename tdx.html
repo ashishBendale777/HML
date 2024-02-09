@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <style>
+        table,
+        th,
+        tr {
+            border: 2px solid cyan;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="rmpRnl">
+        <tr>
+            <th>EmpName</th>
+            <th>EmpSalary</th>
+            <th>EmpDept</th>
+            <th>EmpDesig</th>
+        </tr>
+    </table>
+
+    <script>
+        const tblData = document.getElementById('rmpRnl')
+
+        const Employee = [{
+            EmpName: "Sadhana",
+            EmpSalary: 30000,
+            EmpDept: "Designing",
+            EmpDesig: "Manager"
+        }, {
+            EmpName: "Sadhana",
+            EmpSalary: 30000,
+            EmpDept: "Designing",
+            EmpDesig: "Manager"
+        }, {
+            EmpName: "Sadhana",
+            EmpSalary: 30000,
+            EmpDept: "Designing",
+            EmpDesig: "Manager"
+        }]
+
+        for (const Emp of Employee) {
+            let tr = document.createElement('tr')
+
+            let tdName = document.createElement('td')
+            let tdSalary = document.createElement('td')
+            let tdDept = document.createElement('td')
+            let tdDesig = document.createElement('td')
+
+            tdName.appendChild(document.createTextNode(Emp.EmpName))
+            tdSalary.appendChild(document.createTextNode(Emp.EmpSalary))
+            tdDept.appendChild(document.createTextNode(Emp.EmpDept))
+            tdDesig.appendChild(document.createTextNode(Emp.EmpDesig))
+
+            tr.appendChild(tdName)
+            tr.appendChild(tdSalary)
+            tr.appendChild(tdDept)
+            tr.appendChild(tdDesig)
+
+            tblData.appendChild(tr)
+        }
+    </script>
+</body>
+
+</html>
